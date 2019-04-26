@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TwitchDBWebsite.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwitchUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeagueUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscordUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstagramUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwitterUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isSubscribed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tier)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TwitchUN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeagueUN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscordUN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstagramUN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TwitterUN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isSubscribed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tier)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
